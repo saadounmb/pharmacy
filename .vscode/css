@@ -1,0 +1,133 @@
+/* Reset default browser styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+Example JavaScript (script.js)
+javascript
+Copier le code
+function validateForm() {
+    // Fetching values from all input fields and storing them in variables
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+    var dob = document.getElementById("dob").value;
+
+    // Regular expressions for validation
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/; // At least one number, one lowercase and one uppercase letter, and at least 8 characters
+
+    // Initializing error variable with a default message
+    var error = "";
+    
+    // Validate name
+    if (name == "") {
+        document.getElementById("nameError").innerHTML = "Name is required";
+        error = "true";
+    } else {
+        document.getElementById("nameError").innerHTML = "";
+    }
+
+    // Validate email
+    if (email == "") {
+        document.getElementById("emailError").innerHTML = "Email is required";
+        error = "true";
+    } else if (!emailRegex.test(email)) {
+        document.getElementById("emailError").innerHTML = "Invalid email format";
+        error = "true";
+    } else {
+        document.getElementById("emailError").innerHTML = "";
+    }
+
+    // Validate password
+    if (password == "") {
+        document.getElementById("passwordError").innerHTML = "Password is required";
+        error = "true";
+    } else if (!passwordRegex.test(password)) {
+        document.getElementById("passwordError").innerHTML = "Password must be at least 8 characters long and include at least one number, one lowercase and one uppercase letter";
+        error = "true";
+    } else {
+        document.getElementById("passwordError").innerHTML = "";
+    }
+
+    // Validate confirm password
+    if (confirmPassword == "") {
+        document.getElementById("confirmPasswordError").innerHTML = "Please confirm password";
+        error = "true";
+    } else if (password != confirmPassword) {
+        document.getElementById("confirmPasswordError").innerHTML = "Passwords do not match";
+        error = "true";
+    } else {
+        document.getElementById("confirmPasswordError").innerHTML = "";
+    }
+
+    // Validate date of birth
+    if (dob == "") {
+        document.getElementById("dobError").innerHTML = "Date of Birth is required";
+        error = "true";
+    } else {
+        document.getElementById("dobError").innerHTML = "";
+    }
+
+    // Prevent form submission if there are errors
+    if (error) {
+        return false;
+    } else {
+        return true;
+    }
+}
