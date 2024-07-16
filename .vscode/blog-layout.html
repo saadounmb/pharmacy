@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #555;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        nav ul li a:hover {
+            background-color: #777;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        article {
+            margin-bottom: 20px;
+        }
+        article header {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        article h2 {
+            margin: 10px 0;
+        }
+        article p {
+            margin: 10px 0;
+            line-height: 1.8;
+        }
+        article footer {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Blog</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#posts">Posts</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <article>
+            <header>
+                <h2>First Post Title</h2>
+                <p>Published on <time datetime="2024-07-16">July 16, 2024</time></p>
+            </header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero ac est porttitor, sit amet tempus felis pellentesque. Nunc sodales posuere dolor, non dictum tellus pellentesque in. Mauris in quam nec mi malesuada eleifend.</p>
+            <footer>
+                <p>Tags: <a href="#tag1">#Tag1</a>, <a href="#tag2">#Tag2</a></p>
+            </footer>
+        </article>
+        
+        <article>
+            <header>
+                <h2>Second Post Title</h2>
+                <p>Published on <time datetime="2024-07-15">July 15, 2024</time></p>
+            </header>
+            <p>Sed fermentum eget eros at ultricies. Sed hendrerit sapien vitae erat malesuada, sit amet eleifend sapien sagittis. Ut at blandit enim, vel mattis purus. Suspendisse ut odio quis metus fermentum varius.</p>
+            <footer>
+                <p>Tags: <a href="#tag2">#Tag2</a>, <a href="#tag3">#Tag3</a></p>
+            </footer>
+        </article>
+        
+        <article>
+            <header>
+                <h2>Third Post Title</h2>
+                <p>Published on <time datetime="2024-07-14">July 14, 2024</time></p>
+            </header>
+            <p>Vivamus non nunc dapibus, consectetur urna et, fringilla justo. Sed efficitur, felis nec feugiat tempor, nisl ligula posuere nulla, non dignissim erat risus quis nisi.</p>
+            <footer>
+                <p>Tags: <a href="#tag1">#Tag1</a>, <a href="#tag3">#Tag3</a></p>
+            </footer>
+        </article>
+    </div>
+    <footer>
+        <p>&copy; 2024 My Blog. All rights reserved.</p>
+    </footer>
+</body>
+</html>
