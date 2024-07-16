@@ -2,35 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Advanced Registration Form</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link your external CSS file for styling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
-    <h1>Advanced Registration Form</h1>
-    <form id="registrationForm" action="#" method="post" onsubmit="return validateForm()">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <span id="nameError" class="error"></span>
+    <header>
+        <h1>My Photo Gallery</h1>
+    </header>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <span id="emailError" class="error"></span>
+    <section class="gallery">
+        <a href="https://placeimg.com/640/480/nature" target="_blank">
+            <img src="https://placeimg.com/320/240/nature" alt="Nature 1">
+        </a>
+        <a href="https://placeimg.com/640/480/architecture" target="_blank">
+            <img src="https://placeimg.com/320/240/architecture" alt="Architecture 1">
+        </a>
+        <a href="https://placeimg.com/640/480/travel" target="_blank">
+            <img src="https://placeimg.com/320/240/travel" alt="Travel 1">
+        </a>
+        <a href="https://placeimg.com/640/480/nature/grayscale" target="_blank">
+            <img src="https://placeimg.com/320/240/nature/grayscale" alt="Nature 2">
+        </a>
+        <a href="https://placeimg.com/640/480/architecture/grayscale" target="_blank">
+            <img src="https://placeimg.com/320/240/architecture/grayscale" alt="Architecture 2">
+        </a>
+        <a href="https://placeimg.com/640/480/travel/grayscale" target="_blank">
+            <img src="https://placeimg.com/320/240/travel/grayscale" alt="Travel 2">
+        </a>
+    </section>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" minlength="8" required>
-        <span id="passwordError" class="error"></span>
-
-        <label for="confirmPassword">Confirm Password:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" minlength="8" required>
-        <span id="confirmPasswordError" class="error"></span>
-
-        <label for="dob">Date of Birth:</label>
-        <input type="date" id="dob" name="dob" required>
-        <span id="dobError" class="error"></span>
-
-        <button type="submit">Register</button>
-    </form>
-
-    <script src="script.js"></script> <!-- Link your external JavaScript file -->
 </body>
 </html>
